@@ -1,0 +1,4 @@
+Here is mz documentation of the process it took to build YearGuessr. Every hour I line out what happened and what changed in my code.
+
+Hour 1:
+First I have set the title of the page, and inserted an input field and a "guess" button for the player. Then I got to work on the index.js part. I created a new class named "image", and made a image url randomizer from the image URLs I have picked from wikimedia commons (just to make sure they are copyright free). In the next hour I will handle the logic part, to determine and display the correctness of the guess. Perhaps I will also make the webpage more aesthetic using fonts and colors.
