@@ -1,5 +1,5 @@
 **Overview**
-YearGuessr is a web game that lets you guess the age of a photograph in three trys! (This Project is for Hackclub #horizons, more info at https://horizons.hackclub.com/).
+YearGuessr is a web game that lets you guess the age of a photograph in three trys! I had lots of fun coding this and I hope you'll have lots of fun playing! (This Project is for Hackclub #horizons, more info at https://horizons.hackclub.com/).
 
 **What it does & How to use it**
 YearGuessr is pretty simple to use. The website spawns an image on the webpage and your job is to determine what year the photograph was taken in three trys. The website also gives you feedback if the photgraph was taken later or earlier than your guess. If you guess wrong three times you won't be able to guess again and you'll have to click on the "next" button to receive the next photograph.
