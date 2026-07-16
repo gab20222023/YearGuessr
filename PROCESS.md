@@ -11,3 +11,6 @@ This hour I have spent my time enhancing the features of the logic. For example,
 
 Hour 4:
 In this hour I have added some more images, so it's 10 in total now. I've set them all as comments for now tho in order to trouble shoot. Next I have fixed the problem with the wrong year in the first guess, which I have explained previously. I have also styled the page a little bit so it looks nicer (blue background and white monospace font). Next I will try to fix the problem with the availibility of photos.
+
+Hour 5:
+As of this hour I am basically finished with this project, at least the core part of it. All the game logic is working perfectly, and I am basically only looking at the aesthetic part of this page now. In the next hours I'd definetelly like to expand the game with high scores and perhaphs animations.
