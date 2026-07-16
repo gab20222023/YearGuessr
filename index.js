@@ -34,6 +34,7 @@ function randomImage() {
 let lives = 3;
 document.getElementById('result').innerText = '';
 const nextButton = document.getElementById('nextImage');
+const guessButton = document.getElementById('guessButton');
 nextImage();
 loadNextImage();
 
@@ -55,12 +56,13 @@ function loadNextImage() {
         document.getElementById('yearInput').value = '';
         lives = 3;
         nextButton.disabled = true;
+        guessButton.disabled = false;
     }
 }
 
 function checkGuess() {
     const userGuess = parseInt(document.getElementById('yearInput').value);
-    if (lives > 0) {
+    if (lives > 1) {
         if (userGuess === correctYear) {
             document.getElementById('result').innerText = 'Correct! The year is ' + correctYear;
             nextButton.disabled = false;
@@ -76,9 +78,18 @@ function checkGuess() {
         }
     }
     else {
-        document.getElementById('result').innerText = 'No lives left! Click next to try again.';
-        nextButton.disabled = false;
-        availableImages = availableImages.filter(img => img !== nextImageNotAFunction);
+        if (userGuess === correctYear) {
+            document.getElementById('result').innerText = 'Correct! The year is ' + correctYear + ', click next to try again.';
+            nextButton.disabled = false;
+            guessButton.disabled = true;
+            availableImages = availableImages.filter(img => img !== nextImageNotAFunction);
+        }
+        else {
+            document.getElementById('result').innerText = 'Incorrect! The year is ' + correctYear + '. No lives left! Click next to try again.';
+            nextButton.disabled = false;
+            guessButton.disabled = true;
+            availableImages = availableImages.filter(img => img !== nextImageNotAFunction);
+        }
     }
     if (availableImages.length === 0 && lives > 0) {
         endGame('correct');
