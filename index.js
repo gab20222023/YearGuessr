@@ -13,14 +13,14 @@ class Image {
 const images = [
     new Image('Photos/Photo1.jpg', 1986),
     new Image('Photos/Photo2.jpg', 1961),
-    //new Image('Photos/Photo3.jpg', 1940),
-    //new Image('Photos/Photo4.jpg', 1942),
-    //new Image('Photos/Photo5.jpg', 1944),
-    //new Image('Photos/Photo6.jpg', 1946),
-    //new Image('Photos/Photo7.jpg', 1950),
-    //new Image('Photos/Photo8.jpg', 1955),
-    //new Image('Photos/Photo9.jpg', 1964),
-    //new Image('Photos/Photo10.jpg', 1970)
+    new Image('Photos/Photo3.jpg', 1940),
+    new Image('Photos/Photo4.jpg', 1942),
+    new Image('Photos/Photo5.jpg', 1944),
+    new Image('Photos/Photo6.jpg', 1946),
+    new Image('Photos/Photo7.jpg', 1950),
+    new Image('Photos/Photo8.jpg', 1955),
+    new Image('Photos/Photo9.jpg', 1964),
+    new Image('Photos/Photo10.jpg', 1970)
 
 ];
 
