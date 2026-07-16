@@ -13,6 +13,15 @@ class Image {
 const images = [
     new Image('Photos/Photo1.jpg', 1986),
     new Image('Photos/Photo2.jpg', 1961),
+    //new Image('Photos/Photo3.jpg', 1940),
+    //new Image('Photos/Photo4.jpg', 1942),
+    //new Image('Photos/Photo5.jpg', 1944),
+    //new Image('Photos/Photo6.jpg', 1946),
+    //new Image('Photos/Photo7.jpg', 1950),
+    //new Image('Photos/Photo8.jpg', 1955),
+    //new Image('Photos/Photo9.jpg', 1964),
+    //new Image('Photos/Photo10.jpg', 1970)
+
 ];
 
 let imagesUsed = [];
@@ -23,7 +32,7 @@ function randomImage() {
     return availableImages[randomIndex];
 }
 
-let lives = 2;
+let lives = 3;
 document.getElementById('result').innerText = '';
 const nextButton = document.getElementById('nextImage');
 nextImage();
@@ -34,39 +43,29 @@ function nextImage() {
     return 0;
 }
 
-function checkAvailability(image) {
-    imagesUsed.push(image);
-    availableImages = [];
-    for (let i = 0; i < images.length; i++) {
-        for (let j = 0; j < imagesUsed.length; j++) {
-            if (images[i] !== imagesUsed[j]) {
-                availableImages.push(images[i]);
-            }
-        }
-    }
+function loadNextImage() {
     if (availableImages.length === 0) {
-        document.getElementById('result').innerText = 'No more images available!';
+        endGame();
+    }
+    else {
+        nextImage();
+        document.getElementById('imageURL').src = nextImageNotAFunction.url;
+        console.log('image: ' + nextImageNotAFunction.url);
+        globalThis.correctYear = nextImageNotAFunction.year;
+        document.getElementById('result').innerText = '';
+        document.getElementById('yearInput').value = '';
+        lives = 3;
         nextButton.disabled = true;
     }
-    return 0;
-}
-
-function loadNextImage() {
-    nextImage();
-    document.getElementById('imageURL').src = nextImageNotAFunction.url;    const correctYear = nextImageNotAFunction.year;
-    document.getElementById('result').innerText = '';
-    document.getElementById('yearInput').value = '';
-    lives = 2;
-    nextButton.disabled = true;
 }
 
 function checkGuess() {
     const userGuess = parseInt(document.getElementById('yearInput').value);
-    const correctYear = nextImageNotAFunction.year;
     if (lives > 0) {
         if (userGuess === correctYear) {
             document.getElementById('result').innerText = 'Correct! The year is ' + correctYear;
             nextButton.disabled = false;
+            delete availableImages[availableImages.indexOf(nextImageNotAFunction)];
         } 
         else if (userGuess > correctYear) {
             document.getElementById('result').innerText = 'Incorrect! The year is earlier.';
@@ -80,8 +79,14 @@ function checkGuess() {
     else {
         document.getElementById('result').innerText = 'No lives left! Click next to try again.';
         nextButton.disabled = false;
-        checkAvailability(nextImageNotAFunction);
+        delete availableImages[availableImages.indexOf(nextImageNotAFunction)];
+    }
+    if (availableImages.length === 0) {
+        endGame();
     }
 }
 
-document.getElementById('imageURL').src = randomImage().url;
+function endGame() {
+    document.getElementById('result').innerText = 'No more images left! Game over.';
+    nextButton.disabled = true;
+}

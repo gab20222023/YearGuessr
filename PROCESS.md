@@ -8,3 +8,6 @@ I've spent this entire hour getting the logic right. During this time I have man
 
 Hour 3:
 This hour I have spent my time enhancing the features of the logic. For example, I have coded the feature that determines if the guessed year was earlier or later than the correct year, to give the user some feedback. I have also tried to code the feature, where you can't guess an image more than one time, so when you click on next you won't get the same image ever again (except if you refresh of course). But I didn't finish that yet, since this feature is surprisingly difficult to integrate. Another current issue is the fact that for some reason, the first time you guess the image, the "correct year" the program returns is wrong. I hope I'll have both of those issues fixed by the end of hour 5.
+
+Hour 4:
+In this hour I have added some more images, so it's 10 in total now. I've set them all as comments for now tho in order to trouble shoot. Next I have fixed the problem with the wrong year in the first guess, which I have explained previously. I have also styled the page a little bit so it looks nicer (blue background and white monospace font). Next I will try to fix the problem with the availibility of photos.
